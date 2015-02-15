@@ -1,7 +1,7 @@
 import Control.Applicative
 
 (*>) :: Applicative f => f a -> f b -> f b
-fa *> fb = fb
+(*>) = liftA2 (const id)
 
 sequenceA :: Applicative f => [f a] -> f [a]
 sequenceA [] = pure []
